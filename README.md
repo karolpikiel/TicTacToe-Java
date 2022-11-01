@@ -12,4 +12,4 @@ branches:
 
 main - simple check without loops
 
-loop - solution loops
+loop-solution - solution check with loops

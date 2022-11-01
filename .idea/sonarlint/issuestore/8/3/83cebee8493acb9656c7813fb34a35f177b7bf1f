@@ -1,0 +1,13 @@
+
+J
+java:S1121¨".Extract the assignment out of this expression.(ƒ¾‹ıÿÿÿÿ
+e	java:S117w"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë­¹
+e	java:S117w"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë­¹
+7
+java:S1659w""Declare "ai_j" on a separate line.(ë­¹
+?
+java:S2140z")Use "java.util.Random.nextInt()" instead.(Ç€Ç’
+?
+java:S2140{")Use "java.util.Random.nextInt()" instead.(ÂÆ ü
+i
+java:S3776—"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¯×ŸÏ

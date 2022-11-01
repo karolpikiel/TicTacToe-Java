@@ -150,74 +150,36 @@ public class Game {
      */
     public String checkGameWinner(char [][]grid){
         String result = "None";
-        // First row check
-        if (grid[0][0] == 'x' && grid[1][0] == 'x' && grid[2][0] == 'x' ) {
-            result = "X wins";
+        // check is it necessary to look for a winner
+        if(freeSpots<=5){
+            //column check
+            for(int i=0; i<3; i++){
+                if(grid[i][0] == grid[i][1] && grid[i][1] == grid[i][2] && grid[i][1] != '-') {
+                    result = grid[i][0] + " wins.";
+                }
+            }
+            //row check
+            for(int j=0; j<3; j++){
+                if(grid[0][j] == grid[1][j] && grid[1][j] == grid[2][j] && grid[1][j] != '-') {
+                    result = grid[0][j] + " wins.";
+                }
+            }
+            // diagonal check bottom to top
+            if (grid[2][0] == grid[1][1] && grid[1][1] == grid[0][2] && grid[1][1] != '-') {
+                result = grid[1][1] + " wins.";
+            }
+            // diagonal check top to bottom
+            if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2] && grid[1][1] != '-') {
+                result = grid[1][1] + " wins.";
+            }
+            //tie
+            if(freeSpots == 0){
+                result = " Tie.";
+            }
         }
-        else if (grid[0][0] == 'o' && grid[1][0] == 'o' && grid[2][0] == 'o' ) {
-            result = "O wins";
-        }
-
-        // Second row check
-        else if (grid[0][1] == 'x' && grid[1][1] == 'x' && grid[2][1] == 'x' ) {
-            result = "X wins";
-        }
-        else if (grid[0][1] == 'o' && grid[1][1] == 'o' && grid[2][1] == 'o' ) {
-            result = "O wins";
-        }
-
-        // Third row check
-        else if (grid[0][2] == 'x' && grid[1][2] == 'x' && grid[2][2] == 'x' ) {
-            result = "X wins";
-        }
-        else if (grid[0][2] == 'o' && grid[1][2] == 'o' && grid[2][2] == 'o' ) {
-            result = "O wins";
-        }
-
-        // Diagonal bottom to top check
-        else if (grid[2][0] == 'x' && grid[1][1] == 'x' && grid[0][2] == 'x' ) {
-            result = "X wins";
-        }
-        else if (grid[2][0] == 'o' && grid[1][1] == 'o' && grid[0][2] == 'o' ) {
-            result = "O wins";
-        }
-
-        // Diagonal top to bottom check
-        else if (grid[0][0] == 'x' && grid[1][1] == 'x' && grid[2][2] == 'x' ) {
-            result = "X wins";
-        }
-        else if (grid[0][0] == 'o' && grid[1][1] == 'o' && grid[2][2] == 'o' ) {
-            result = "O wins";
-        }
-
-        // First column check
-        else if (grid[0][0] == 'x' && grid[0][1] == 'x' && grid[0][2] == 'x' ) {
-            result = "X wins";
-        }
-        else if (grid[0][0] == 'o' && grid[0][1] == 'o' && grid[0][2] == 'o' ) {
-            result = "O wins";
-        }
-
-        // Second column check
-        else if (grid[1][0] == 'x' && grid[1][1] == 'x' && grid[1][2] == 'x' ) {
-            result = "X wins";
-        }
-        else if (grid[1][0] == 'o' && grid[1][1] == 'o' && grid[1][2] == 'o' ) {
-            result = "O wins";
-        }
-
-        // Third column check
-        else if (grid[2][0] == 'x' && grid[2][1] == 'x' && grid[2][2] == 'x' ) {
-            result = "X wins";
-        }
-        else if (grid[2][0] == 'o' && grid[2][1] == 'o' && grid[2][2] == 'o' ) {
-            result = "O wins";
-        }
-
-        // Tie
-        else if (grid[0][0] != '-' && grid[0][1] != '-' && grid[0][2] != '-' && grid[1][0] !='-'&&
-                grid[1][1] != '-' && grid[1][2] != '-' && grid[2][0] != '-' && grid[2][1] != '-' && grid[2][2] != '-'){
-            result = "Tie";
+        // if nb of moves cannot determine winner
+        else{
+             result = "None";
         }
         return result;
     }

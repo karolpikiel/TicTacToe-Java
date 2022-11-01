@@ -1,8 +1,12 @@
 # TicTacToe-Java
-Prework Java assigment nb.2
+Prework Java assigment nb.2 
+by Udacity
 
 First project in Java.
 
-Winning conditions check
+Winning conditions check of game Tic Tac Toe
 
-v.1 - simple check without loops
+branches:
+
+main - simple check without loops
+loop - solution loops
